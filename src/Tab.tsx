@@ -1,4 +1,5 @@
 import { Tabs, Flex, Layout, Col, Row } from "antd";
+import TableAnt from "./components/TableAnt";
 
 interface Props {}
 
@@ -33,7 +34,7 @@ function Tab(props: Props) {
                 key="1"
                 style={{ backgroundColor: "#FFFFFF"}}
               >
-                Content of Tab Pane 1
+                <TableAnt/>
               </TabPane>
 
               <TabPane tab="in progress" key="2">
