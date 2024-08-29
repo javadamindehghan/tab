@@ -1,3 +1,10 @@
 body {
- background-color: #F5F5F5;
+  background-color: #f5f5f5;
+}
+.ant-table-column-sorters {
+  flex-direction: row-reverse;
+}
+
+.ant-table-thead .ant-table-cell {
+  background-color: white !important;
 }
