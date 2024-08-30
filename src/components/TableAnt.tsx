@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { Divider, Radio, Table } from "antd";
-import type { TableColumnsType } from "antd";
-import { type } from "os";
+import React from "react";
+import { Divider, Col, Row, Table, Typography, Input, Pagination } from "antd";
+import { FilterOutlined, SearchOutlined } from "@ant-design/icons";
 
-// rowSelection object indicates the need for row selection
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: any[]) => {
     console.log(
@@ -16,24 +14,80 @@ const rowSelection = {
 };
 
 const TableAnt = ({ data, columns }: { data: any; columns: any }) => {
-
-
   return (
-    <div>
+    <>
+      <Row
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          backgroundColor: "white",
+        }}
+      >
+        <Col span={12}>
+          <Row>
+            <Col span={3}>
+              <Typography style={{ fontSize: "8px" }}>
+                <FilterOutlined /> Filters{" "}
+              </Typography>
+            </Col>
+            <Col span={7}>
+              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
+                Order Data ,july2020,2024
+              </Typography>
+            </Col>
+            <Col span={4}>
+              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
+                Customer
+              </Typography>
+            </Col>
+            <Col span={4}>
+              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
+                Clear all
+              </Typography>
+            </Col>
+          </Row>
+        </Col>
+        <Row>
+          <Col span={20}>
+            <Input
+              size="large"
+              placeholder="Search"
+              prefix={<SearchOutlined />}
+            />
+          </Col>
+        </Row>
+
+    
+      </Row>
+
       <Table
-      style={{flexDirection:'row-reverse'}}
-     
+        pagination={false}
+        style={{ flexDirection: "row-reverse"}}
         rowSelection={{
-          
-          type: 'checkbox',
+          type: "checkbox",
           ...rowSelection,
         }}
         columns={columns}
         dataSource={data}
-      
-      
       />
-    </div>
+      {/* <Row>
+        <Col span={24} style={{backgroundColor:'white'}}><Divider/></Col>
+      </Row> */}
+    
+      <Row>
+        <Col
+          span={24}
+          style={{
+            justifyContent: "flex-end",
+            display: "flex",
+            margin: "10px",
+          }}
+        >
+          <Typography> total record {data.length}</Typography>
+          <Pagination size="small" total={data.length} />
+        </Col>
+      </Row>
+    </>
   );
 };
 

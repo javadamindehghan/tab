@@ -8,3 +8,13 @@ body {
 .ant-table-thead .ant-table-cell {
   background-color: white !important;
 }
+.ant-pagination-item-active{
+  background-color: yellow !important;
+  color: black !important;
+}
+.ant-pagination-item-active>a{
+  color: black !important;
+}
+.ant-table-content{
+  padding-bottom: 20px;
+}

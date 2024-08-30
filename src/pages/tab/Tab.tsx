@@ -32,8 +32,12 @@ function Tab(props: Props) {
                 flexDirection: "column",
                 marginBottom: "0px",
                 paddingLeft: "5px",
-                borderTopLeftRadius: "10px",
-                borderTopRightRadius: "10px",
+
+                borderRadius: `${
+                  activeTab == "1" || activeTab == "4"
+                    ? "10px"
+                    : "10px 10px 0 0"
+                }`,
                 alignItems: "flex-start",
               }}
               tabBarGutter={50}
@@ -41,7 +45,7 @@ function Tab(props: Props) {
               <TabPane
                 tab={<Typography>ready to ship</Typography>}
                 key="1"
-                style={{ backgroundColor: "#FFFFFF" }}
+                
               >
                 <ReadyToShip />
               </TabPane>
@@ -58,8 +62,9 @@ function Tab(props: Props) {
               <TabPane tab={<Typography>finished</Typography>} key="4">
                 <Finished />
               </TabPane>
+              <Divider/>
             </Tabs>
-            <Divider />
+           
           </Col>
         </Row>
       </Content>
