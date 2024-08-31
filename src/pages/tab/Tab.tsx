@@ -20,7 +20,7 @@ function Tab(props: Props) {
     <>
       <Content>
         <Row justify="center">
-          <Col span={16}>
+          <Col span={20}>
             <Tabs
               defaultActiveKey="1"
               onChange={(key) => {

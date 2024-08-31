@@ -1,6 +1,8 @@
 import React from "react";
 import { Divider, Col, Row, Table, Typography, Input, Pagination } from "antd";
 import { FilterOutlined, SearchOutlined } from "@ant-design/icons";
+import Filter from "../Filter";
+import MenuAnt from "./MenuAnt";
 
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: any[]) => {
@@ -21,33 +23,14 @@ const TableAnt = ({ data, columns }: { data: any; columns: any }) => {
           display: "flex",
           justifyContent: "space-around",
           backgroundColor: "white",
+          paddingTop:'20px'
         }}
       >
         <Col span={12}>
-          <Row>
-            <Col span={3}>
-              <Typography style={{ fontSize: "8px" }}>
-                <FilterOutlined /> Filters{" "}
-              </Typography>
-            </Col>
-            <Col span={7}>
-              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
-                Order Data ,july2020,2024
-              </Typography>
-            </Col>
-            <Col span={4}>
-              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
-                Customer
-              </Typography>
-            </Col>
-            <Col span={4}>
-              <Typography style={{ fontSize: "8px", fontWeight: "lighter" }}>
-                Clear all
-              </Typography>
-            </Col>
-          </Row>
+         <Filter/>
         </Col>
         <Row>
+        <Col span={4}><MenuAnt/></Col>
           <Col span={20}>
             <Input
               size="large"
@@ -55,6 +38,7 @@ const TableAnt = ({ data, columns }: { data: any; columns: any }) => {
               prefix={<SearchOutlined />}
             />
           </Col>
+         
         </Row>
 
     
