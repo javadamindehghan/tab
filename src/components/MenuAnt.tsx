@@ -1,33 +1,35 @@
-import React from "react";
-import { Menu } from "antd";
-import {
-  AppstoreAddOutlined,
-  UserOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import React from 'react';
+import { DownOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Dropdown, Space } from 'antd';
 
-const MenuAnt = () => {
+const items: MenuProps['items'] = [
+  {
+    label: <a href="https://www.antgroup.com">1st menu item</a>,
+    key: '0',
+  },
+  {
+    label: <a href="https://www.aliyun.com">2nd menu item</a>,
+    key: '1',
+  },
+  {
+    type: 'divider',
+  },
+  {
+    label: '3rd menu item',
+    key: '3',
+  },
+];
 
-
-
-
-    
-  return (
-    <Menu  mode="horizontal" triggerSubMenuAction='click' >
-       
-      <Menu.Item   key="1" icon={<AppstoreAddOutlined />}>
-        خانه
-      </Menu.Item>
-      <Menu.Item key="2" icon={<UserOutlined />}>
-        پروفایل
-      </Menu.Item>
-      <Menu.Item key="3" icon={<SettingOutlined />}>
-        تنظیمات
-      </Menu.Item>
-      <Menu.Item key="4">خروج</Menu.Item>
-
-    </Menu>
-  );
-};
+const MenuAnt: React.FC = () => (
+  <Dropdown menu={{ items }} trigger={['click']}>
+    <a onClick={(e) => e.preventDefault()}>
+      <Space style={{color:'black'}}>
+        Search By
+        <DownOutlined />
+      </Space>
+    </a>
+  </Dropdown>
+);
 
 export default MenuAnt;

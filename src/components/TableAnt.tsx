@@ -23,30 +23,32 @@ const TableAnt = ({ data, columns }: { data: any; columns: any }) => {
           display: "flex",
           justifyContent: "space-around",
           backgroundColor: "white",
-          paddingTop:'20px'
+          paddingTop: "20px",
         }}
       >
-        <Col span={12}>
-         <Filter/>
+        <Col span={8} push={1}>
+          <Filter />
         </Col>
-        <Row>
-        <Col span={4}><MenuAnt/></Col>
-          <Col span={20}>
-            <Input
-              size="large"
-              placeholder="Search"
-              prefix={<SearchOutlined />}
-            />
-          </Col>
-         
-        </Row>
 
-    
+        <Col span={16} >
+          <Row>
+            <Col span={4} push={8} style={{textAlign:'right'}}>
+              <MenuAnt />
+            </Col>
+            <Col span={10} push={9}>
+              <Input
+                size="large"
+                placeholder="Search"
+                prefix={<SearchOutlined />}
+              />
+            </Col>
+          </Row>
+        </Col>
       </Row>
 
       <Table
         pagination={false}
-        style={{ flexDirection: "row-reverse"}}
+        style={{ flexDirection: "row-reverse" }}
         rowSelection={{
           type: "checkbox",
           ...rowSelection,
@@ -57,7 +59,7 @@ const TableAnt = ({ data, columns }: { data: any; columns: any }) => {
       {/* <Row>
         <Col span={24} style={{backgroundColor:'white'}}><Divider/></Col>
       </Row> */}
-    
+
       <Row>
         <Col
           span={24}
